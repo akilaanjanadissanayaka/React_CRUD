@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
     <title>Title</title>
 </head>
 <body>
+<div class="container-fluid text-center">
     <h1>My home page</h1>
+    <a class="h2" href="/users">Manage usres</a>
+
+</div>
 </body>
 </html>
