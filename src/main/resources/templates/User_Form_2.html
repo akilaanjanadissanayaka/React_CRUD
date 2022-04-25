@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid ">
+    <div class="text-center"><h1>Add New User</h1></div>
+    <form th:action="@{users/save}" method="post" th:object="${user}" style="max-width: 500px; margin: 0 auto">    <!--show new form in usercontroller-->
+        <div class="border border-secondary rounded p-3">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" >E-mail</label>
+                <div class="col-sm-8">
+                    <input type="email" th:field="*{email}" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" >firstName</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{firstName}" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" >lastName</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{lastName}" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label" >password</label>
+                <div class="col-sm-8">
+                    <input type="password" th:field="*{password}" />
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">save</button>
+                <button type="button" onclick="cancleform()" class="btn btn-secondary">cancle</button>
+
+            </div>
+
+
+        </div>
+    </form>
+</div>
+</body>
+</html>

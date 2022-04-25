@@ -23,6 +23,17 @@ public class User {
     @Column(length = 45,nullable = false,name = "Last_name")
     private String lastName;
 
+
+//    private boolean enable;
+//
+//    public boolean isEnable() {
+//        return enable;
+//    }
+//
+//    public void setEnable(boolean enable) {
+//        this.enable = enable;
+//    }
+
     @Override
     public String toString() {
         return "User{" +

@@ -21,10 +21,10 @@ public class UserRepositoryTest {
 
     public void testAddNew(){
         User user=new User();
-        user.setEmail("Anjana@gmail.com");
-        user.setFirstName("Akilaa");
-        user.setLastName("Disaa");
-        user.setPassword("12345");
+        user.setEmail("Anjana@gmail2.com");
+        user.setFirstName("Akilaaz2");
+        user.setLastName("Disaaz2");
+        user.setPassword("12345z2");
 
         User savedUser=repo.save(user);
         Assertions.assertThat(savedUser).isNotNull();
