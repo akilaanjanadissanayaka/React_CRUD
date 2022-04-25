@@ -9,6 +9,7 @@
 <div class="container-fluid ">
     <div class="text-center"><h1>[[${pageTitle}]]</h1></div>
     <form th:action="@{save}" method="post" th:object="${user}" style="max-width: 500px; margin: 0 auto">    <!--show new form in usercontroller-->
+        <input type="hidden" th:field="*{id}">
         <div class="border border-secondary rounded p-3">
             <div class="form-group row">
                 <label class="col-sm-4 col-form-label" >E-mail</label>

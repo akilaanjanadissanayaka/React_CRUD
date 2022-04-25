@@ -45,6 +45,12 @@ public class UserController {
         ra.addFlashAttribute("message","Successfully added");
         return "redirect:/Users2";
     }
+    @PostMapping("Users2/edit/save")
+    public String SaveEditedUser(User user, RedirectAttributes ra){
+        service.save(user);
+        ra.addFlashAttribute("message","Successfully added");
+        return "redirect:/Users2";
+    }
     @GetMapping("/Users2/edit/{id}")
     public String showEditForm(@PathVariable("id") Integer id, Model model,RedirectAttributes ra){
         try {
@@ -53,8 +59,18 @@ public class UserController {
             model.addAttribute("pageTitle"," Edit User "+id);
             return "user_form";
         } catch (UserNotFoundException e) {
-            ra.addFlashAttribute("message","Successfully added");
+            ra.addFlashAttribute("message",e.getMessage());
             return "redirect:/Users2";
         }
+    }
+    @GetMapping("/Users2/delete/{id}")
+    public String DeleteUser(@PathVariable("id") Integer id, RedirectAttributes ra){
+        try {
+            service.delete(id);
+        } catch (UserNotFoundException e) {
+            ra.addFlashAttribute("message",e.getMessage());
+
+        }
+        return "redirect:/Users2";
     }
 }
